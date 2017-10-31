@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         fragments.add(jokeFragment);
         fragments.add(photoFragment);
         fragments.add(videoFragment);
-        radioGroup.check(R.id.photo);
+        radioGroup.check(R.id.news);
     }
 
     @Override
