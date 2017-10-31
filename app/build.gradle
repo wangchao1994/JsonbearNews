@@ -50,4 +50,5 @@ dependencies {
     compile 'fm.jiecao:jiecaovideoplayer:4.6.3'
     compile 'de.hdodenhof:circleimageview:2.2.0'
     testCompile 'junit:junit:4.12'
+    compile 'cn.bluemobi.dylan:photoview:1.4'
 }

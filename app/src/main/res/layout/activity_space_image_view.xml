@@ -5,6 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#473D3D"
     tools:context="com.zf.hotupdate_tinker.SpaceImageVIewActivity">
 
+    <cn.bluemobi.dylan.photoview.library.PhotoView
+        android:id="@+id/image_space"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>

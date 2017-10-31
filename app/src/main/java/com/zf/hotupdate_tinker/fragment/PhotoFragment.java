@@ -1,6 +1,7 @@
 package com.zf.hotupdate_tinker.fragment;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +15,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.zf.hotupdate_tinker.R;
+import com.zf.hotupdate_tinker.SpaceImageVIewActivity;
 import com.zf.hotupdate_tinker.adpter.PhotoAdapter;
 import com.zf.hotupdate_tinker.data.BaseJson;
 import com.zf.hotupdate_tinker.data.VideoDataBean;
@@ -71,6 +74,31 @@ public class PhotoFragment extends BaseFragment implements SwipeRefreshLayout.On
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(photoAdapter);
+        recyclerView.addOnItemTouchListener(new SimpleClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(getActivity(), SpaceImageVIewActivity.class);
+                intent.putExtra("url", data.get(position).getGroup().getLarge_image().getUrl_list().get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+
+            @Override
+            public void onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(getActivity(), SpaceImageVIewActivity.class);
+                intent.putExtra("url", data.get(position).getGroup().getLarge_image().getUrl_list().get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+
+            @Override
+            public void onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
         updateData();
     }
 
