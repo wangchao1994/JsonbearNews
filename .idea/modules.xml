@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HotUpdate_Tinker.iml" filepath="$PROJECT_DIR$/HotUpdate_Tinker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MvpTools/MvpTools.iml" filepath="$PROJECT_DIR$/MvpTools/MvpTools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapterlibrary/adapterlibrary.iml" filepath="$PROJECT_DIR$/adapterlibrary/adapterlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/magicindicator/magicindicator.iml" filepath="$PROJECT_DIR$/magicindicator/magicindicator.iml" />
+    </modules>
+  </component>
+</project>

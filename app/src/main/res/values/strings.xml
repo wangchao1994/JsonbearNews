@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">News</string>
+
+    <string-array name="news_type_cn">
+        <item>头条</item>
+        <item>社会</item>
+        <item>国内</item>
+        <item>国际</item>
+        <item>娱乐</item>
+        <item>体育</item>
+        <item>军事</item>
+        <item>科技</item>
+        <item>财经</item>
+        <item>时尚</item>
+    </string-array>
+    <string-array name="news_type_en">
+        <item>toutiao</item>
+        <item>shehui</item>
+        <item>guonei</item>
+        <item>guoji</item>
+        <item>yule</item>
+        <item>tiyu</item>
+        <item>junshi</item>
+        <item>keji</item>
+        <item>caijing</item>
+        <item>shishang</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="video_type_cn">
+        <item>关注</item>
+        <item>推荐</item>
+        <item>视频</item>
+        <item>直播</item>
+        <item>图片</item>
+        <item>段子</item>
+        <item>精华</item>
+        <item>游戏</item>
+
+    </string-array>
+    <string name="title_activity_splash">SplashActivity</string>
+
+</resources>
