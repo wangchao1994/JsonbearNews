@@ -28,13 +28,18 @@ public class VideoAdapter extends BaseQuickAdapter<VideoDataBean.DataBean,BaseVi
     @Override
     protected void convert(BaseViewHolder helper, VideoDataBean.DataBean item) {
         String name = item.getGroup().getUser().getName();
-        helper.setText(R.id.tv_username,name);
+        if (name != null) {
+            helper.setText(R.id.tv_username, name);
+        }
         CircleImageView iv = (CircleImageView) helper.getView(R.id.video_image);
         if (iv != null){
             Glide.with(mContext).load(item.getGroup().getUser().getAvatar_url())
                     .into(iv);
         }
-        helper.setText(R.id.tv_title,item.getGroup().getContent());
+        String content = item.getGroup().getContent();
+        if (content != null) {
+            helper.setText(R.id.tv_title, content);
+        }
 
         /**
          * 视频加载
