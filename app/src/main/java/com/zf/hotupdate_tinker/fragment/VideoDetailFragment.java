@@ -51,6 +51,7 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
     private VideoAdapter videoAdapter;
     private ImageView iv_update;
     private VideoFragment videoFragment;
+    private int list_id;
 
     public static VideoDetailFragment newInstance() {
         Bundle args = new Bundle();
@@ -137,10 +138,11 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
         swipeRefreshLayout.setRefreshing(true);
         if (videoFragment == null){
             videoFragment = new VideoFragment();
+            list_id = videoFragment.List_id();
         }
         QClient.getInstance().create(QService.class, Api.APP_DOMAIN)
                // .getMainTab1ObjectData(VideoFragment.data.get(0).getList_id()+"","西安", (long) 108.9158414235, (long) 34.165824685598,
-                .getMainTab1ObjectData(videoFragment.List_id()+"","西安", (long) 108.9158414235, (long) 34.165824685598,
+                .getMainTab1ObjectData(list_id + "", "西安", (long) 108.9158414235, (long) 34.165824685598,
                         new Date().getTime(),20,(long)1509353250//
         ).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
