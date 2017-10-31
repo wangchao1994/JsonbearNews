@@ -123,4 +123,9 @@ public interface QService {
                                                               @Query("am_loc_time") Long am_loc_time,
                                                               @Query("count") int count,
                                                               @Query("min_time") Long min_time);
+
+
+    @GET("/neihan/stream/mix/v1/?content_type=-103")
+    Observable<BaseJson<VideoDataBean>> getPhotoURLData();
+
 }
