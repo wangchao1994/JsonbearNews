@@ -121,7 +121,6 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
         updateData();
     }
 
-
     /**
      * 数据的更新
      *https://lf.snssdk.com/neihan/stream/mix/v1/?
