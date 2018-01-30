@@ -123,8 +123,12 @@ public class NewsDetailFragment extends Fragment implements SwipeRefreshLayout.O
                 .subscribe(new Consumer<NewsData>() {
                     @Override
                     public void accept(NewsData newsData) throws Exception {
-                        Log.d("news data", "newsData----->" + newsData);
-                        newsAdapter.setNewData(newsData.getResult().getData());
+                        if (newsData != null) {
+                            Log.d("news data", "newsData----->" + newsData);
+                            if (newsData.getResult().getData() != null) {
+                                newsAdapter.setNewData(newsData.getResult().getData());
+                            }
+                        }
                         srl.setRefreshing(false);
                     }
                 })
