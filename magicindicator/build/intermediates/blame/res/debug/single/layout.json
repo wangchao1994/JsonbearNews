@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/home/wangchao/Android_tools/AndroidProject/HotUpdate_Tinker/magicindicator/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/home/wangchao/.android/build-cache/6116b47a1dca79af2d6814937cb1d89b1de82419/output/res/layout/abc_action_mode_bar.xml"
+        "merged": "/home/wangchao/Android_tools/AndroidProject/HotUpdate_Tinker/magicindicator/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/home/wangchao/.android/build-cache/6116b47a1dca79af2d6814937cb1d89b1de82419/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/home/wangchao/Android_tools/AndroidProject/HotUpdate_Tinker/magicindicator/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
         "source": "/home/wangchao/.android/build-cache/6116b47a1dca79af2d6814937cb1d89b1de82419/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/home/wangchao/Android_tools/AndroidProject/HotUpdate_Tinker/magicindicator/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/home/wangchao/.android/build-cache/6116b47a1dca79af2d6814937cb1d89b1de82419/output/res/layout/notification_template_part_chronometer.xml"
+        "merged": "/home/wangchao/Android_tools/AndroidProject/HotUpdate_Tinker/magicindicator/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/home/wangchao/.android/build-cache/6116b47a1dca79af2d6814937cb1d89b1de82419/output/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/home/wangchao/Android_tools/AndroidProject/HotUpdate_Tinker/magicindicator/build/intermediates/res/merged/debug/layout/pager_navigator_layout_no_scroll.xml",

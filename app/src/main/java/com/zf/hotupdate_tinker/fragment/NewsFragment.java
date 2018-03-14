@@ -35,6 +35,8 @@ public class NewsFragment extends BaseFragment {
     private String[] types_cn = null;
     public NewsFragment() {
         // Required empty public constructor
+
+
     }
 
     public static NewsFragment newInstance() {

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.zf.hotupdate_tinker.R;
@@ -146,7 +147,7 @@ public class JokeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         ll_error.setVisibility(View.GONE);
         ll_loading.setVisibility(View.VISIBLE);
 
-
+ /*
         QClient.getInstance().create(QService.class, Contants.BASE_JOKE_URL)
                 .getCurrentJokeData(1,8)
                 .subscribeOn(Schedulers.io())
@@ -156,12 +157,16 @@ public class JokeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
                     public void accept(JokeBean jokeBean) throws Exception {
                         List<JokeBean.ResultBean.DataBean> data = jokeBean.getResult().getData();
                         Log.d("joke data","joke"+data);
-                        jokeAdapter.setNewData(data);
-                        handler.sendEmptyMessage(0x01);
+                        if (data != null){
+                            jokeAdapter.setNewData(data);
+                            handler.sendEmptyMessage(0x01);
+                        }else{
+                            Toast.makeText(getActivity().getApplicationContext(),"No data to show!",Toast.LENGTH_LONG).show();
+                        }
                     }
-                });
+                });*/
 
-        /*
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -172,18 +177,21 @@ public class JokeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
                         .subscribe(new Consumer<JokeBean>() {
                             @Override
                             public void accept(JokeBean jokeBean) throws Exception {
+                                if (jokeBean != null) return;
                                 List<JokeBean.ResultBean.DataBean> data = jokeBean.getResult().getData();
                                 Log.d("joke data","joke"+data);
                                 if (data != null){
                                     jokeAdapter.setNewData(data);
                                     handler.sendEmptyMessage(0x01);
+                                } else {
+                                    Toast.makeText(getActivity().getApplicationContext(), "No data to show!", Toast.LENGTH_LONG).show();
                                 }
 
                             }
                         });
             }
         }).start();
-        */
+
     }
 
 }

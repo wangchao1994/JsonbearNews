@@ -138,6 +138,7 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
         if (videoFragment == null){
             videoFragment = new VideoFragment();
             list_id = videoFragment.List_id();
+            Log.d("wchao listid", "list_id ---->  " + list_id);
         }
         QClient.getInstance().create(QService.class, Api.APP_DOMAIN)
                // .getMainTab1ObjectData(VideoFragment.data.get(0).getList_id()+"","西安", (long) 108.9158414235, (long) 34.165824685598,

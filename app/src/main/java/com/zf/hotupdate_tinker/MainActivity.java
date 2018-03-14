@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             }
         }
     }
-
     private Fragment getFragemnt() {
         BaseFragment fragment = fragments.get(position);
         return fragment;
