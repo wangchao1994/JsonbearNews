@@ -177,7 +177,7 @@ public class JokeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
                         .subscribe(new Consumer<JokeBean>() {
                             @Override
                             public void accept(JokeBean jokeBean) throws Exception {
-                                if (jokeBean != null) return;
+                                if (jokeBean == null) return;
                                 List<JokeBean.ResultBean.DataBean> data = jokeBean.getResult().getData();
                                 Log.d("joke data","joke"+data);
                                 if (data != null){

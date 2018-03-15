@@ -124,7 +124,8 @@ public class VideoFragment extends BaseFragment {
 
             @Override
             public Fragment getItem(int position) {
-                return new VideoDetailFragment(data.get(position).getName());
+                VideoDetailFragment videoDetailFragment = VideoDetailFragment.newInstance(data.get(position).getName());
+                return videoDetailFragment;
             }
 
             @Override

@@ -40,11 +40,26 @@ public class NewsDetailFragment extends Fragment implements SwipeRefreshLayout.O
     private String type = null;
     private NewsAdapter newsAdapter;
 
-    public NewsDetailFragment() {
+    /*
+        public NewsDetailFragment() {
+        }
+
+        public NewsDetailFragment(String type) {
+            this.type = type;
+        }
+    */
+    public static NewsDetailFragment newInstance(String type) {
+        Bundle args = new Bundle();
+        args.putString("type", type);
+        NewsDetailFragment fragment = new NewsDetailFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
-    public NewsDetailFragment(String type) {
-        this.type = type;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        type = getArguments().getString("type");
     }
 
     @Nullable

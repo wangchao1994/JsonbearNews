@@ -53,21 +53,27 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
     private VideoFragment videoFragment;
     private int list_id;
 
-    public static VideoDetailFragment newInstance() {
+    public static VideoDetailFragment newInstance(String type) {
         Bundle args = new Bundle();
-
+        args.putString("type", type);
         VideoDetailFragment fragment = new VideoDetailFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public VideoDetailFragment(String type) {
-        this.type = type;
+    /*
+        public VideoDetailFragment(String type) {
+            this.type = type;
+        }
+        public VideoDetailFragment() {
+            // Required empty public constructor
+        }
+    */
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        type = getArguments().getString("type");
     }
-    public VideoDetailFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

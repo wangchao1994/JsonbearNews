@@ -103,7 +103,8 @@ public class NewsFragment extends BaseFragment {
 
         @Override
         public Fragment getItem(int position) {
-            return new NewsDetailFragment(types[position]);
+            NewsDetailFragment detailFragment = NewsDetailFragment.newInstance(types[position]);
+            return detailFragment;
         }
 
         @Override
