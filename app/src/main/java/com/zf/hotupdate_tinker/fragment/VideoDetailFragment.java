@@ -53,9 +53,9 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
     private VideoFragment videoFragment;
     private int list_id;
 
-    public static VideoDetailFragment newInstance(String type) {
+    public static VideoDetailFragment newInstance(int list_id) {
         Bundle args = new Bundle();
-        args.putString("type", type);
+        args.putInt("list_id", list_id);
         VideoDetailFragment fragment = new VideoDetailFragment();
         fragment.setArguments(args);
         return fragment;
@@ -72,7 +72,8 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        type = getArguments().getString("type");
+        list_id = getArguments().getInt("list_id");
+        Log.d("videofragment", "list_id=" + list_id);
     }
 
     @Override
@@ -141,14 +142,15 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
 //获取tab接口i数据返回的getList_id()
 
         swipeRefreshLayout.setRefreshing(true);
+        /*
         if (videoFragment == null){
             videoFragment = new VideoFragment();
             list_id = videoFragment.List_id();
             Log.d("wchao listid", "list_id ---->  " + list_id);
-        }
+        }*/
         QClient.getInstance().create(QService.class, Api.APP_DOMAIN)
                // .getMainTab1ObjectData(VideoFragment.data.get(0).getList_id()+"","西安", (long) 108.9158414235, (long) 34.165824685598,
-                .getMainTab1ObjectData(list_id + "", "西安", (long) 108.9158414235, (long) 34.165824685598,
+                .getMainTab1ObjectData(String.valueOf(list_id), "西安", (long) 108.9158414235, (long) 34.165824685598,
                         new Date().getTime(),20,(long)1509353250//
         ).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -158,8 +160,10 @@ public class VideoDetailFragment extends Fragment implements SwipeRefreshLayout.
                         VideoDataBean data = videoDataBeanBaseJson.getData();
                         if (data != null){
                             dataBeen = data.getData();
-                            videoAdapter.setNewData(dataBeen);
-                            Log.d("video data1","data 11111"+dataBeen.get(0).getGroup().getContent());
+                            if (dataBeen != null && dataBeen.size() > 0) {
+                                videoAdapter.setNewData(dataBeen);
+                                Log.d("video data1", "data 11111" + dataBeen.get(0).getGroup().getContent());
+                            }
                             iv_update.clearAnimation();
                         }else{
                             //Toast.makeText(getContext(),"地址不合法",Toast.LENGTH_SHORT).show();

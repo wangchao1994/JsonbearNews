@@ -4,6 +4,7 @@ package com.zf.hotupdate_tinker.fragment;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -49,13 +50,6 @@ public class VideoFragment extends BaseFragment {
     private VideoPageAdapter videoPageAdapter;
     private int list_id;
 
-    public VideoFragment() {
-        // Required empty public constructor
-    }
-
-    public int List_id(){
-        return list_id;
-    }
     public static VideoFragment newInstance() {
         Bundle args = new Bundle();
         VideoFragment fragment = new VideoFragment();
@@ -96,6 +90,7 @@ public class VideoFragment extends BaseFragment {
                             list_id = data.get(index).getList_id();
                         }
                     });
+
                     return colorTransitionPagerTitleView;
                 }
                 return null;
@@ -124,7 +119,7 @@ public class VideoFragment extends BaseFragment {
 
             @Override
             public Fragment getItem(int position) {
-                VideoDetailFragment videoDetailFragment = VideoDetailFragment.newInstance(data.get(position).getName());
+                VideoDetailFragment videoDetailFragment = VideoDetailFragment.newInstance(data.get(position).getList_id());
                 return videoDetailFragment;
             }
 
